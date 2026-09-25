@@ -8,6 +8,17 @@
   </head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+
+    <!-- plain JS helper (not JSX, loaded as-is) -->
+    <script src="api.js"></script>
+
+    <!-- Pages -->
+    <script type="text/babel" src="pages/Dashboard.jsx"></script>
+    <script type="text/babel" src="pages/Problems.jsx"></script>
+    <script type="text/babel" src="pages/TagCoverage.jsx"></script>
+    <script type="text/babel" src="pages/Settings.jsx"></script>
+
+    <script type="text/babel" src="App.jsx"></script>
+    <script type="text/babel" src="main.jsx"></script>
   </body>
 </html>
