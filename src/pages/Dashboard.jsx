@@ -33,4 +33,15 @@ function DashboardPage({ entries, on }) {
         ),
     [entries],
   );
+
+  const upcomingReviews = useMemo(
+    () =>
+      entries
+        .filter((e) => new Date(e.nextReviewDate).getTime() > Date.now())
+        .sort((a, b) => new Date(a.nextReviewDate) - new Date(b.nextReviewDate))
+        .slice(0, 3),
+    [entries],
+  );
+  const displayedReviews =
+    reviewQueue.length > 0 ? reviewQueue : upcomingReviews;
 }
